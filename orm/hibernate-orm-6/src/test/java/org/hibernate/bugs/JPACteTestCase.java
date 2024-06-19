@@ -31,8 +31,8 @@ public class JPACteTestCase  {
         entityManagerFactory.createEntityManager().createQuery( "with c1 as (select c.id as id from CteEntity c), " +
                         "c2 as (select c.id as id from CteEntity c)" +
                         "  select c from CteEntity c" +
-                        " join c1 on c.id = c1.id " +
-                        " join c2 on c.id = c2.id" )
+                        " join c1 c1_join on c.id = c1_join.id " +
+                        " join c2 c2_join on c.id = c2_join.id" )
                 .getResultList();
     }
 
